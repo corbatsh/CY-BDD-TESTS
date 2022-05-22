@@ -1,16 +1,25 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
 Given('I open login page', () => {
-	cy.visitHomepage()
+	cy.visitLoginpage()
 })
 
-When('I submit login', () => {
-	cy.visitLoginpage()
-	cy.fixture('loginData').then(({ username, password }) => {
-		cy.login(username, password)
-	})
+When('I fill username with {string}', (username) => {
+	cy.fillUsername(username)
+})
+
+When('I fill password with {string}', (password) => {
+	cy.fillPassword(password)
+})
+
+When('I click submit login', () => {
+	cy.signIn()
 })
 
 Then('I should see homepage', () => {
-	cy.get('#account_summary_tab').should('be.visible')
+	cy.shouldSeeHomepage()
+})
+
+Then('I should see error message', () => {
+	cy.shouldShowErrorMessage()
 })

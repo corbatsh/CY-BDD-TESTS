@@ -3,5 +3,6 @@
   "animationDistanceThreshold": 20,
   "defaultCommandTimeout": 4000,
   "pageLoadTimeout": 10000,
-  "ignoreTestFiles": ["*.ts","*.md"]
+  "ignoreTestFiles": ["*.ts","*.md"],
+  "watchForFileChanges": false
 }

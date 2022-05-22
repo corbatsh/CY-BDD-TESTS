@@ -15,6 +15,7 @@
   "author": "Kamil Bortlik",
   "license": "ISC",
   "dependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2",
     "cypress": "^9.6.1",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "prettier": "^2.6.2",

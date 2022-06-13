@@ -1,3 +1,4 @@
+const loginPageUrl = 'http://zero.webappsecurity.com/login.html'
 const username_input = '#user_login'
 const password_input = '#user_password'
 const submit_button = 'input[name="submit"]'
@@ -6,6 +7,7 @@ const accountSummaryHomepage = '#account_summary_tab'
 
 declare namespace Cypress {
 	interface Chainable {
+		visitLoginpage(): Chainable<Element>
 		login(username: string, password: string): Chainable<Element>
 		fillUsername(username: string): Chainable<Element>
 		fillPassword(password: string): Chainable<Element>
@@ -20,6 +22,10 @@ declare namespace Cypress {
 // 	cy.get('#user_password').type(password)
 // 	cy.contains('Sign in').click()
 // })
+
+Cypress.Commands.add('visitLoginpage', () => {
+	cy.visit(loginPageUrl)
+})
 
 Cypress.Commands.add('fillUsername', (username) => {
 	cy.get(username_input).type(username)

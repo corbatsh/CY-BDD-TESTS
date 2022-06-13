@@ -15,5 +15,3 @@ defineStep('I see {string} in the url', (url) => {
 defineStep('I reload the browser', () => {
 	cy.reload()
 })
-
-//test

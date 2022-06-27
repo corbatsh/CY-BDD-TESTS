@@ -1,4 +1,4 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
 Given('I open feedback page', () => {
 	cy.visitFeedbackPage()
@@ -10,6 +10,6 @@ When('I fill feedback form', () => {
 	})
 })
 
-When('i click send button', () => {
+And('i click send button', () => {
 	cy.sendFeedback()
 })
